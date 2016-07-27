@@ -1,0 +1,17 @@
+<?php
+namespace Home\Model;
+use Think\Model;
+
+class ActcodeModel extends Model{
+	protected $trueTableName = 'con_actcode';
+	
+	/**
+	 * 验证激活码是否存在
+	 * @access public
+	 * @return string 
+	 * 
+	 */
+	public function checkActcode($actcode, $user_id){
+		$info = $this->where(array("actcode" => trim($actcode)))
+	}
+}

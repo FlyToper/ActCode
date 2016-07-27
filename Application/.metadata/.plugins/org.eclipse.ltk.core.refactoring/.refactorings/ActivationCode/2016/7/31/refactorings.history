@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;ActivationCode/Home/View/User/register.html&apos; to &apos;show.html&apos;" description="Rename resource &apos;register.html&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="Home/View/User/register.html" name="show.html" stamp="1469583488549" updateReferences="true"/>
+</session>

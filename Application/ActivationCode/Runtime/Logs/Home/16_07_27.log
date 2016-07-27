@@ -1,0 +1,8 @@
+[ 2016-07-27T09:55:06+08:00 ] 127.0.0.1 /User/checkLogin
+ERR: 1054:Unknown column 'a11311e7732f01fd25fb13530f220fa3' in 'where clause'
+ [ SQL语句 ] : SELECT * FROM `con_user` WHERE ( id=100002 && password = a11311e7732f01fd25fb13530f220fa3 ) 
+
+[ 2016-07-27T14:16:44+08:00 ] 127.0.0.1 /User/getContact
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-100,100' at line 1
+ [ SQL语句 ] : SELECT * FROM `con_contact` LIMIT -100,100  
+

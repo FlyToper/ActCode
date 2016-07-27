@@ -1,0 +1,27 @@
+<?php
+namespace Home\Model;
+use Think\Model;
+
+
+class ContactModel extends Model{
+	protected  $trueTableName = 'con_contact';
+	
+	/**
+	 * 获取联系人信息
+	 * 
+	 * @access public
+	 * @param $number string �������
+	 * @return array	返回联系人数组
+	 * 
+	 */
+	public function executeGetContactList($number){
+		$info = $this-> limit(100*$number, 100) -> select();
+		return $info;
+	}
+}
+
+
+
+
+
+

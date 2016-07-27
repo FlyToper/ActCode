@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>注册页面</title>
+</head>
+<body>
+	<form action="/User/register" method="post">
+	密码：<input tyepe="text" >
+	IMEI：<input tyepe="text" >
+	</form>
+</body>
+</html>

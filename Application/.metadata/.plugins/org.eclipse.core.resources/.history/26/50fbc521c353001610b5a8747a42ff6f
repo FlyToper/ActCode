@@ -1,0 +1,14 @@
+<?php
+	header("Content-Type:text/html;chartset=utf-8");
+	//创建项目的应用目录
+	//许多文件目录会创建在这个地方
+	define("APP_PATH", "../");
+	
+	//设置开发模式为："调试模式"
+	define("APP_DEBUG", true);
+	
+	//密码前缀常理
+	define("PWD_PREFIX", "contact");
+	
+	
+	include "../../../ThinkPHP/ThinkPHP.php";

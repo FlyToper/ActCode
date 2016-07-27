@@ -1,0 +1,6 @@
+<?php
+public function p($value){
+	if(is_array($value)){
+		dump()
+	}
+}

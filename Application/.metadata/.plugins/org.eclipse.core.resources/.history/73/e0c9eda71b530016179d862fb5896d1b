@@ -1,0 +1,20 @@
+<?php
+namespace \Home\Model;
+use Think\Model;
+
+/**
+ * 对应的是联系人表: con_contact
+ * 
+ */
+class ContactModel extends Model{
+	protected  $trueTableName = 'con_contact';
+	
+	/**
+	 * 根据激活码的次数获取联系人数据
+	 * 
+	 * 
+	 */
+	public function getContactList($number){
+		
+	}
+}

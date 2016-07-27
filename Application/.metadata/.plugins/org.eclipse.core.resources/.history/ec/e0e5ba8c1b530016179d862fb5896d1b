@@ -1,0 +1,11 @@
+<?php
+namespace \Home\Model;
+use Think\Model;
+
+/**
+ * 对应的是联系人表: con_contact
+ * 
+ */
+class ContactModel extends Model{
+	protected  $trueTableName = '';
+}

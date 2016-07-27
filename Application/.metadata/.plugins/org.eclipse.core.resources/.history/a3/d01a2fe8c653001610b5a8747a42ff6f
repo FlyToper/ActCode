@@ -1,0 +1,52 @@
+<?php
+namespace Home\Model;
+use Think\Model;
+
+class ActcodeModel extends Model{
+	protected $trueTableName = 'con_actcode';
+	
+	/**
+	 * 验证激活码
+	 * 
+	 * @access public
+	 * @param $actcode	string 	激活码
+	 * @param $user_id	string	用户id
+	 * @return string	返回验证结果
+	 * 
+	 */
+	public function executeCheckActcode($actcode, $user_id){
+		$info = $this->where(array("actcode" => trim($actcode) )) -> find();
+		
+		if(!empty($info)){//�����ҵ���Ӧ�ļ�¼����ʾ���������
+			//�ҵ������룬Ȼ����֤�Ƿ������û�����
+			
+			if($info['status'] == '0'){//��û������
+				$data = array(
+						"status" => 1,
+						"user_id" => $user_id,
+						"time" => date("Y-m-d h:i:s",time())
+				);
+				
+				$rst =  $this->where(array("id"=> $info["id"])) -> save($data);
+				if($rst === false){
+					//���ݿ����ʧ�ܣ�����Fail3
+					return "Fail3";
+				}else{
+					//���³ɹ�������Succeed
+					return "Succeed";
+				}
+			}else{//�Ѿ���������ж��Ƿ�Ϊ�������ӵ����
+				if($info['user_id'] == trim($user_id)){
+					//ӵ����
+					return "Succeed";
+				}else{
+					//��ӵ���ߣ�����Fail2
+					return "Fail2";
+				}
+			}
+		}else{
+			//�Ҳ���������,����Fail1
+			return "Fail1";
+		}
+	}
+}

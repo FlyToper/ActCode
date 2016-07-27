@@ -1,0 +1,52 @@
+<?php
+namespace Home\Model;
+use Think\Model;
+
+class ActcodeModel extends Model{
+	protected $trueTableName = 'con_actcode';
+	
+	/**
+	 * 验证激活码
+	 * 
+	 * @access public
+	 * @param $actcode	string 	激活码
+	 * @param $user_id	string	用户id
+	 * @return string	返回验证结果
+	 * 
+	 */
+	public function executeCheckActcode($actcode, $user_id){
+		$info = $this->where(array("actcode" => trim($actcode) )) -> find();
+		
+		if(!empty($info)){//该激活码存在
+			//
+			
+			if($info['status'] == '0'){//
+				$data = array(
+						"status" => 1,
+						"user_id" => $user_id,
+						"time" => date("Y-m-d h:i:s",time())
+				);
+				
+				$rst =  $this->where(array("id"=> $info["id"])) -> save($data);
+				if($rst === false){
+					//Fail3
+					return "Fail3";
+				}else{
+					//Succeed
+					return "Succeed";
+				}
+			}else{//
+				if($info['user_id'] == trim($user_id)){
+					//
+					return "Succeed";
+				}else{
+					//Fail2
+					return "Fail2";
+				}
+			}
+		}else{
+			//激活码不存在：返回 Fail1
+			return "Fail1";
+		}
+	}
+}
