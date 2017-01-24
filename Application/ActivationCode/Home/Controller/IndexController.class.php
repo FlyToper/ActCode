@@ -15,10 +15,10 @@ class IndexController extends Controller {
     }
     
     public function checkDB(){
-    	$localhost = 'qdm225205192.my3w.com';
+    	$localhost = 'XXXXX';
     	$port = '3306';
-    	$user = 'qdm225205192';
-    	$pwd = 'wenxi2015';
+    	$user = 'XXXXX';
+    	$pwd = 'XXXXX';
     	
     	$link = mysql_connect("$localhost:$port", $user, $pwd);
     	if(!is_resource($link)){
